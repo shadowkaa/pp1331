@@ -1,0 +1,28 @@
+# Készítsen programot, 
+# amelyik beolvassa a születési hónap sorszámát és adja meg, 
+# hogy télen született-e! Ellenőrizze, 
+# hogy helyes értéket kapott-e 1..12 (biztos egészet kapott).
+# Az ellenőrzéshez használjon függvényt!
+
+def teliHonap(month_input):
+    teliHonapok = [1, 2, 12]
+    if month_input in teliHonapok:
+        return True
+    else:
+        return False
+
+def isHonap(month_input):
+    if month_input < 1 or month_input > 12:
+        return False
+    else:
+        return True
+
+month_input = int(input("Kérem, adjon meg a születési hónap sorszámát (1-12): "))
+
+if not isHonap(month_input):
+    print("Hibás hónapérték! Kérem, adjon meg egy érvényes hónapsorszámot (1-12).")
+else:
+    if teliHonap(month_input):
+        print("Télen született.")
+    else:
+        print("Nem télen született.")
